@@ -105,7 +105,7 @@ func TestValidateVersion(t *testing.T) {
 			args{
 				ver: "1.1.3.sd.023658",
 			},
-			semver.ErrInvalidSemVer,
+			semver.ErrInvalidCharacters,
 		},
 	}
 	for _, tt := range tests {
