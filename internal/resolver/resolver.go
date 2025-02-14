@@ -87,7 +87,7 @@ func (r *Resolver) Resolve(reqs []*chart.Dependency, repoNames map[string]string
 				return nil, err
 			}
 
-			v, err := semver.NewVersion(ch.Metadata.Version)
+			v, err := semver.StrictNewVersion(ch.Metadata.Version)
 			if err != nil {
 				// Not a legit entry.
 				continue
@@ -136,7 +136,7 @@ func (r *Resolver) Resolve(reqs []*chart.Dependency, repoNames map[string]string
 			version = d.Version
 
 			// Check to see if an explicit version has been provided
-			_, err := semver.NewVersion(version)
+			_, err := semver.StrictNewVersion(version)
 
 			// Use an explicit version, otherwise search for tags
 			if err == nil {
@@ -174,7 +174,7 @@ func (r *Resolver) Resolve(reqs []*chart.Dependency, repoNames map[string]string
 		}
 		// The versions are already sorted and hence the first one to satisfy the constraint is used
 		for _, ver := range vs {
-			v, err := semver.NewVersion(ver.Version)
+			v, err := semver.StrictNewVersion(ver.Version)
 			// OCI does not need URLs
 			if err != nil || (!registry.IsOCI(d.Repository) && len(ver.URLs) == 0) {
 				// Not a legit entry.
