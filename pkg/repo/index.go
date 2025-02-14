@@ -67,11 +67,11 @@ func (c ChartVersions) Swap(i, j int) { c[i], c[j] = c[j], c[i] }
 // Less returns true if the version of entry a is less than the version of entry b.
 func (c ChartVersions) Less(a, b int) bool {
 	// Failed parse pushes to the back.
-	i, err := semver.NewVersion(c[a].Version)
+	i, err := semver.StrictNewVersion(c[a].Version)
 	if err != nil {
 		return true
 	}
-	j, err := semver.NewVersion(c[b].Version)
+	j, err := semver.StrictNewVersion(c[b].Version)
 	if err != nil {
 		return false
 	}
@@ -210,7 +210,7 @@ func (i IndexFile) Get(name, version string) (*ChartVersion, error) {
 	}
 
 	for _, ver := range vs {
-		test, err := semver.NewVersion(ver.Version)
+		test, err := semver.StrictNewVersion(ver.Version)
 		if err != nil {
 			continue
 		}
