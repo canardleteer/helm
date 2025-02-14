@@ -130,7 +130,7 @@ func validateChartVersion(cf *chart.Metadata) error {
 		return errors.New("version is required")
 	}
 
-	version, err := semver.NewVersion(cf.Version)
+	version, err := semver.StrictNewVersion(cf.Version)
 
 	if err != nil {
 		return errors.Errorf("version '%s' is not a valid SemVer", cf.Version)
