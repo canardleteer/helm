@@ -880,7 +880,7 @@ func (c *Client) ValidateReference(ref, version string, u *url.URL) (*url.URL, e
 	}
 
 	// Evaluate whether an explicit version has been provided. Otherwise, determine version to use
-	_, errSemVer := semver.NewVersion(version)
+	_, errSemVer := semver.StrictNewVersion(version)
 	if errSemVer == nil {
 		tag = version
 	} else {
