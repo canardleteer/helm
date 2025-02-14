@@ -286,7 +286,7 @@ func (m *Manager) downloadAll(deps []*chart.Dependency) error {
 				return fmt.Errorf("dependency %s has an invalid version/constraint format: %s", dep.Name, err)
 			}
 
-			v, err := semver.NewVersion(ch.Metadata.Version)
+			v, err := semver.StrictNewVersion(ch.Metadata.Version)
 			if err != nil {
 				return fmt.Errorf("invalid version %s for dependency %s: %s", dep.Version, dep.Name, err)
 			}
@@ -780,12 +780,12 @@ func findVersionedEntry(version string, vers repo.ChartVersions) (*repo.ChartVer
 }
 
 func versionEquals(v1, v2 string) bool {
-	sv1, err := semver.NewVersion(v1)
+	sv1, err := semver.StrictNewVersion(v1)
 	if err != nil {
 		// Fallback to string comparison.
 		return v1 == v2
 	}
-	sv2, err := semver.NewVersion(v2)
+	sv2, err := semver.StrictNewVersion(v2)
 	if err != nil {
 		return false
 	}
@@ -876,7 +876,7 @@ func tarFromLocalDir(chartpath, name, repo, version, destPath string) (string, e
 		return "", errors.Wrapf(err, "dependency %s has an invalid version/constraint format", name)
 	}
 
-	v, err := semver.NewVersion(ch.Metadata.Version)
+	v, err := semver.StrictNewVersion(ch.Metadata.Version)
 	if err != nil {
 		return "", err
 	}
