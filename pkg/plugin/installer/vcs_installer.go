@@ -168,7 +168,7 @@ func (i *VCSInstaller) sync(repo vcs.Repo) error {
 func getSemVers(refs []string) []*semver.Version {
 	var sv []*semver.Version
 	for _, r := range refs {
-		if v, err := semver.NewVersion(r); err == nil {
+		if v, err := semver.StrictNewVersion(r); err == nil {
 			sv = append(sv, v)
 		}
 	}
