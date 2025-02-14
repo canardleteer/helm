@@ -78,7 +78,7 @@ func GetTagMatchingVersionOrConstraint(tags []string, versionString string) (str
 	// Otherwise try to find the first available version matching the string,
 	// in case it is a constraint
 	for _, v := range tags {
-		test, err := semver.NewVersion(v)
+		test, err := semver.StrictNewVersion(v)
 		if err != nil {
 			continue
 		}
