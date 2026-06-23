@@ -1,6 +1,6 @@
 module helm.sh/helm/v4
 
-go 1.23.0
+go 1.24.0
 
 require (
 	github.com/AdaLogics/go-fuzz-headers v0.0.0-20230811130428-ced1acdcaa24
@@ -11,8 +11,8 @@ require (
 	github.com/Masterminds/squirrel v1.5.4
 	github.com/Masterminds/vcs v1.13.3
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
-	github.com/containerd/containerd v1.7.25
-	github.com/cyphar/filepath-securejoin v0.4.1
+	github.com/containerd/containerd v1.7.33
+	github.com/cyphar/filepath-securejoin v0.5.1
 	github.com/distribution/distribution/v3 v3.0.0-rc.3
 	github.com/evanphx/json-patch v5.9.11+incompatible
 	github.com/foxcpp/go-mockdns v1.1.0
@@ -33,9 +33,9 @@ require (
 	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
 	github.com/xeipuuv/gojsonschema v1.2.0
-	golang.org/x/crypto v0.33.0
-	golang.org/x/term v0.29.0
-	golang.org/x/text v0.22.0
+	golang.org/x/crypto v0.45.0
+	golang.org/x/term v0.37.0
+	golang.org/x/text v0.31.0
 	k8s.io/api v0.32.1
 	k8s.io/apiextensions-apiserver v0.32.1
 	k8s.io/apimachinery v0.32.1
@@ -113,7 +113,7 @@ require (
 	github.com/miekg/dns v1.1.57 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
-	github.com/moby/spdystream v0.5.0 // indirect
+	github.com/moby/spdystream v0.5.1 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/monochromegane/go-gitignore v0.0.0-20200626010858-205db1a8cc00 // indirect
@@ -159,13 +159,13 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.32.0 // indirect
 	go.opentelemetry.io/otel/trace v1.32.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.3.1 // indirect
-	golang.org/x/mod v0.21.0 // indirect
-	golang.org/x/net v0.33.0 // indirect
-	golang.org/x/oauth2 v0.23.0 // indirect
-	golang.org/x/sync v0.11.0 // indirect
-	golang.org/x/sys v0.30.0 // indirect
-	golang.org/x/time v0.7.0 // indirect
-	golang.org/x/tools v0.26.0 // indirect
+	golang.org/x/mod v0.29.0 // indirect
+	golang.org/x/net v0.47.0 // indirect
+	golang.org/x/oauth2 v0.30.0 // indirect
+	golang.org/x/sync v0.18.0 // indirect
+	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/time v0.12.0 // indirect
+	golang.org/x/tools v0.38.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20241104194629-dd2ea8efbc28 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20241104194629-dd2ea8efbc28 // indirect
 	google.golang.org/grpc v1.68.0 // indirect
